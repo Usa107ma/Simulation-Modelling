@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Server Queuing System Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Single Server Queuing System Simulation</h1>
+        <label for="customers">Number of Customers (N):</label>
+        <input type="number" id="customers" value="50" min="1" step="1">
+        <label for="arrivalRate">Arrival Rate (λ):</label>
+        <input type="number" id="arrivalRate" value="1.0" min="0.1" step="0.1">
+        <label for="serviceRate">Service Rate (μ):</label>
+        <input type="number" id="serviceRate" value="2.5" min="0.1" step="0.1">
+        <div class="buttons">
+            <button onclick="nextCustomer()">Next Customer</button>
+            <button onclick="completeSimulation()">Complete Simulation</button>
+            <button onclick="resetSimulation()">Reset Simulation</button>
+        </div>
+        <h2>Simulation Results</h2>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Interarrival Time</th>
+                    <th>Clock Time</th>
+                    <th>Service Time</th>
+                    <th>Service Start Time</th>
+                    <th>Service End Time</th>
+                    <th>Queue Wait Time</th>
+                </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+        </table>
+        <h2>Averages</h2>
+        <p id="averages"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
